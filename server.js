@@ -35,6 +35,7 @@ const blogs = [
 ];
 
 // Get all blogs
+
 app.get("/api/blogs", (req, res) => {
   res.json(blogs);
 });
@@ -47,6 +48,10 @@ app.get("/api/blogs/:id", (req, res) => {
 
 // Auth routes
 app.use("/api/auth", authRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully");
+});
 
 const PORT = process.env.PORT || 5000;
 
